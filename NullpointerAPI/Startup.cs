@@ -25,14 +25,14 @@ namespace NullpointerAPI
             {
                 options.AddDefaultPolicy(builder =>
                 {
-                    builder.WithOrigins("https://nullpointer.live", "https://localhost:4200", "http://localhost:4200")
+                    builder.WithOrigins("https://www.nullpointer.live", "https://nullpointer.live")
                            .AllowAnyHeader()
                            .AllowAnyMethod()
                            .AllowCredentials();
                 });
             });
             services.AddControllers();
-            services.AddDbContext<AppDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("LocalDb")));
+            services.AddDbContext<AppDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("Elephant")));
             services.AddAutoMapper(typeof(Startup));
         }
 
