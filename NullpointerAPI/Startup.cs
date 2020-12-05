@@ -22,7 +22,7 @@ namespace NullpointerAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<AppDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("LocalDb")));
+            services.AddDbContext<AppDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("Elephant")));
             services.AddAutoMapper(typeof(Startup));
         }
 
