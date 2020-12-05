@@ -10,8 +10,8 @@ using NullpointerAPI.Data;
 namespace NullpointerAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20201204185645_Initial")]
-    partial class Initial
+    [Migration("20201205092905_Initial migration")]
+    partial class Initialmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,12 +28,12 @@ namespace NullpointerAPI.Migrations
                         .HasColumnType("integer")
                         .UseIdentityByDefaultColumn();
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("PostBody")
+                    b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<DateTime>("CreationDateTime")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Title")
                         .IsRequired()

@@ -50,7 +50,7 @@ namespace NullpointerAPI.Controllers
             try
             {
                 Post post = _mapper.Map<Post>(postData);
-                post.DateCreated = DateTime.UtcNow;
+                post.CreationDateTime = DateTime.UtcNow;
                 await _context.Posts.AddAsync(post);
                 await _context.SaveChangesAsync();
             }

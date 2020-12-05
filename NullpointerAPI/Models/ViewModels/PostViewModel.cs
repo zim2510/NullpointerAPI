@@ -10,7 +10,7 @@ namespace NullpointerAPI.Models.ViewModels
         [Required]
         public string Title { get; set; }
         [Required]
-        public string PostBody { get; set; }
-        public DateTime DateCreated { get; set; }
+        public string Content { get; set; }
+        public DateTime CreationDateTime { get; set; }
     }
 }
